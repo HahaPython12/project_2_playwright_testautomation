@@ -9,11 +9,11 @@ class LoginPage {
         this.password = page.locator('#userPassword');
     }
 
+    // write reusable utilities / methods
     async goTo(url){
         await this.page.goto(url);
     }
 
-    // write reusable utilities / methods
     async validLogin(username, password){
         // Login //
         //--- E.g. ---//
@@ -22,6 +22,8 @@ class LoginPage {
         await this.userEmail.type(username);
         await this.password.fill(password);
         await this.signInBtn.click();
+        // wait until page is fully loaded
+        await this.page.waitForLoadState('networkidle');
     }
 
 }
