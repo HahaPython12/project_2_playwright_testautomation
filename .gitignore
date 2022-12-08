@@ -8,3 +8,4 @@ node_modules/
 /tests/MoreValidations.spec.js-snapshots
 /playwright-default-config.js
 /tests/ClientAppPO.spec.js
+/pageobjects/POManager.js
