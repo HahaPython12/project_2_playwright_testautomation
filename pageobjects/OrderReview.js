@@ -8,9 +8,9 @@ class OrderReview{
         this.orderNumber = page.locator('.em-spacer-1 .ng-star-inserted');
     }
 
-    async checkOrderNumber(expectedVaildeOrderText){
+    async checkOrderNumber(expectedValideOrderText){
         //--- Assert ---//
-        await expect(this.valideOrderText).toHaveText(expectedVaildeOrderText);
+        await expect(this.valideOrderText).toHaveText(expectedValideOrderText);
     }
 
     async getOrderNumber(){

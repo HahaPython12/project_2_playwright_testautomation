@@ -9,6 +9,7 @@ const {DashboardPage} = require('./DashboardPage');
 const {CartPage} = require('./CartPage');
 const {CheckoutPage} = require('./CheckoutPage');
 const {OrderReview} = require('./OrderReview');
+const {OrderHistory} = require('./OrderHistory');
 
 
 class POManager{
@@ -26,6 +27,8 @@ class POManager{
         this.checkoutPage = new CheckoutPage(this.page);
         // create object of OrderReview
         this.orderReview = new OrderReview(this.page);
+        // create object of OrderHistory
+        this.orderHistory = new OrderHistory(this.page);
     }
 
     getLoginPage(){
@@ -46,6 +49,10 @@ class POManager{
 
     getOrderReview(){
         return this.orderReview;
+    }
+
+    getOrderHistory(){
+        return this.orderHistory;
     }
 }
 module.exports = {POManager};
