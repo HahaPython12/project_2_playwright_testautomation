@@ -14,6 +14,9 @@ const createOrderPayload = {orders:
     [{country: "Germany", productOrderedId: "6262e95ae26b7e1a10e89bf0"}]};
 let response;
 
+// for mocking response inside test
+const fakePayloadOrders = {data:[],message:"No Orders"};
+
 test.beforeAll(async ()=>
 {
     // Login - Create Order - API //
@@ -54,33 +57,39 @@ test('Place the Order', async ({browser})=>
     // Order-History //
     //--- Arrange ---//
     let orderNumberValue = response.orderID;
+
+    // Intercept Network Response //
+    const URLWeWantToRoute = 'https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/638bbda503841e9c9a49a7d6';
+
+    await page.route(URLWeWantToRoute, async route=>
+        {
+            //intercepting response - API response->(playwright fakeresponse)->browser->render data on front
+            // get the real response, fetching response
+            const realResponse = await page.request.fetch(route.request());
+            // fake response
+            let body = JSON.stringify(fakePayloadOrders);
+            // will send repsonse back to browser
+            route.fulfill(
+            {
+                // send back same response
+                realResponse,
+                // in this way we overwrite the existing body with our fakePayloadOrders
+                body,
+            });
+        });
+    // await page.pause();
+
     // locators
     const orderHistoryBtn = page.locator('.fa-handshake-o');
     const orderTableRows = page.locator('.table tbody tr');
 
     //--- Act ---//
     await orderHistoryBtn.click();
-    console.log(await orderTableRows.nth(0).locator('th').textContent());
+    // wait until page is fully load
+    await page.waitForLoadState('networkidle');
+    //await page.pause();
 
-    // const orderNumberValueCut = orderNumberValue.split(' ')[2].split(' ')[0];
-    console.log('Number: ' + orderNumberValue)
-
-    // wait until body is loaded
-    await page.locator('tbody').waitFor();
-    for (let i =0; i<await orderTableRows.count(); i++){
-        const actualRowOrderNumber = await orderTableRows.nth(i).locator('th').textContent();
-        if(actualRowOrderNumber === orderNumberValue){
-            // click the first button
-            await orderTableRows.nth(i).locator('button').nth(0).click();
-        }
-    }
-
-    const orderNumberInsideView = await page.locator('.col-text').textContent();
-
-    //--- Assert ---//
-    expect(orderNumberInsideView).toContain(orderNumberValue);
-    // or
-    // expect(orderNumberValue.includes(orderNumberInsideView)).toBeTruthy();
-    await page.pause();
+    //--- Assert ---/
+    console.log(await page.locator('.mt-4').textContent());
 
 });
