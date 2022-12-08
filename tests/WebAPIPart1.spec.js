@@ -2,7 +2,7 @@ const {test, expect, request} = require('@playwright/test');
 const {APIUtils} = require('./utils/APIUtils').default;
 
 // TESTCASE: Verify order created is showing in history page
-// Precondition - login, create order via API-
+// Precondition - login, create order via API-call
 
 // the information under Network -> Fetch/XHR -> Headers, Payload, etc.
 const loginAPIURL = "https://rahulshettyacademy.com/api/ecom/auth/login"
