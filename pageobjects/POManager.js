@@ -8,6 +8,7 @@ const {LoginPage} = require('./LoginPage');
 const {DashboardPage} = require('./DashboardPage');
 const {CartPage} = require('./CartPage');
 const {CheckoutPage} = require('./CheckoutPage');
+const {OrderReview} = require('./OrderReview');
 
 
 class POManager{
@@ -23,6 +24,8 @@ class POManager{
         this.cardPage = new CartPage(this.page, desiredProductName);
         // create object of CheckoutPage
         this.checkoutPage = new CheckoutPage(this.page);
+        // create object of OrderReview
+        this.orderReview = new OrderReview(this.page);
     }
 
     getLoginPage(){
@@ -39,6 +42,10 @@ class POManager{
 
     getCheckoutPage(){
         return this.checkoutPage;
+    }
+
+    getOrderReview(){
+        return this.orderReview;
     }
 }
 module.exports = {POManager};
