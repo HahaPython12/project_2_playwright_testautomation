@@ -7,3 +7,4 @@ node_modules/
 *.png
 /tests/MoreValidations.spec.js-snapshots
 /playwright-default-config.js
+/playwright.config1.js
