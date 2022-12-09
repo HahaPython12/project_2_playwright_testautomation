@@ -2,8 +2,9 @@ const {test,expect} = require('@playwright/test');
 const {POManager} = require('../pageobjects/POManager')
 const dataSet = JSON.parse(JSON.stringify(require('../utils/ClientAppPOTestData.json')));
 
+
 // test(Testname, Testfunktion)
-test('Page Context Playwright End-to-End Test', async ({browser})=>
+test(`Page Context Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, async ({browser})=>
 {
 
     //--- Arrange ---//
@@ -14,7 +15,7 @@ test('Page Context Playwright End-to-End Test', async ({browser})=>
     const page = await context.newPage();
 
     // Objects //
-    const poManager = new POManager(page, dataSet.desiredProductName);
+    const poManager = new POManager(page, dataSet[0].desiredProductName);
 
     const loginPage = poManager.getLoginPage();
     const dashboardPage = poManager.getDashboardPage();
@@ -27,10 +28,10 @@ test('Page Context Playwright End-to-End Test', async ({browser})=>
     // Login //
     // cause we use async-methods, to make sure use also ehre await
     await loginPage.goTo(url);
-    await loginPage.validLogin(dataSet.username, dataSet.password);
+    await loginPage.validLogin(dataSet[0].username, dataSet[0].password);
 
     // Dashboard //
-    await dashboardPage.searchForProductAddToCart(dataSet.desiredProductName);
+    await dashboardPage.searchForProductAddToCart(dataSet[0].desiredProductName);
     await dashboardPage.navigateToCart();
 
     //--- Assert ---//
@@ -52,10 +53,10 @@ test('Page Context Playwright End-to-End Test', async ({browser})=>
     await checkoutPage.chooseAddress(address);
 
     //--- Assert ---//
-    await checkoutPage.checkFilledUsername(dataSet.username);
+    await checkoutPage.checkFilledUsername(dataSet[0].username);
     // await page.pause();
     await checkoutPage.navigateToPlaceOrder();
-    
+        
 
     // Order-Review//
     //--- Arrange ---//

@@ -1,5 +1,12 @@
-{
-    "username" : "hallodu@gmail.com", 
-    "password" :  "Aa12345!",
-    "desiredProductName" : "zara coat 3"
-}
+[
+    {
+        "username" : "hallodu@gmail.com", 
+        "password" :  "Aa12345!",
+        "desiredProductName" : "zara coat 3"
+    },
+    {
+        "username" : "secondEmail@gmail.com", 
+        "password" :  "Aa12345!",
+        "desiredProductName" : "adidas original"
+    }
+]
