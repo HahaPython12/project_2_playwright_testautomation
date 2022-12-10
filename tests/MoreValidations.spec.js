@@ -1,5 +1,9 @@
 const {test,expect} = require('@playwright/test');
 
+// let test run parallel with:
+test.describe.configure({mode:'parallel'});
+// spezificly saying that test should run serial with:
+//test.describe.configure({mode:'serial'});
 test("Popup validations", async ({page})=>
 {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
@@ -70,7 +74,7 @@ test("Popup validations", async ({page})=>
 
 });
 
-test("Screenshot & Visual comparison", async({page})=>
+test.skip("Screenshot & Visual comparison", async({page})=>
 {
 
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
@@ -94,7 +98,7 @@ test("Screenshot & Visual comparison", async({page})=>
     await expect(displayElement).toBeHidden();
 });
 
-test.only("Visual Testing", async({page})=>
+test.skip("Visual Testing", async({page})=>
 {
     await page.goto("https://google.com/");
     expect(await page.screenshot()).toMatchSnapshot('landing.png');
