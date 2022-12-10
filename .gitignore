@@ -8,3 +8,4 @@ node_modules/
 /tests/MoreValidations.spec.js-snapshots
 /playwright-default-config.js
 /playwright.config1.js
+/allure-results
