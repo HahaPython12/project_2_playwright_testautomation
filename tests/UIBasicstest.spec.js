@@ -2,7 +2,7 @@ const {test,expect} = require('@playwright/test');
 
 
 // test(Testname, Testfunktion)
-test('Browser Context Playwright test', async ({browser})=>
+test('@Web Browser Context Playwright test', async ({browser})=>
 {
     //--- Arrange ---//
     // chrome - plugin / cookies

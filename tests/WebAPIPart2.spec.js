@@ -33,7 +33,7 @@ test.beforeAll(async ({browser})=>{
 
 
 // test(Testname, Testfunktion)
-test('Page Context Playwright End-to-End Test', async ({})=>
+test('@API Page Context Playwright End-to-End Test', async ({})=>
 {
 
     //--- Arrange ---//

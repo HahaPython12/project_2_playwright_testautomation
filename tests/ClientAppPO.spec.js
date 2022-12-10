@@ -4,7 +4,7 @@ const dataSet = JSON.parse(JSON.stringify(require('../utils/ClientAppPOTestData.
 
 
 // test(Testname, Testfunktion)
-test(`Page Context Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, async ({browser})=>
+test(`@Web Page Context Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, async ({browser})=>
 {
 
     //--- Arrange ---//
