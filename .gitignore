@@ -9,3 +9,4 @@ node_modules/
 /playwright-default-config.js
 /playwright.config1.js
 /allure-results
+/README.md
