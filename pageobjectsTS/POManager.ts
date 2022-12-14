@@ -26,17 +26,11 @@ export default class POManager{
         this.page = page;
         this.desiredProductName = desiredProductName;
         // Objects //
-        // create an object of the LoginPage class, sending page as an argument.
+        // create objects of the pages class, sending page (and product) as an argument.
         this.loginPage = new LoginPage(this.page);
-        // create an object of the DashboardPage class,
         this.dashboardPage = new DashboardPage(this.page);
-        // create object of CardPage
         this.cardPage = new CartPage(this.page, desiredProductName);
-        // create object of CheckoutPage
-        this.checkoutPage = new CheckoutPage(this.page);
-        // create object of OrderReview
         this.orderReview = new OrderReview(this.page);
-        // create object of OrderHistory
         this.orderHistory = new OrderHistory(this.page);
     }
 
