@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "regression": "npx playwright test",
-    "webTests": "npx playwright test --grep @Web",
+    "webTests": "npx playwright test --grep @Web --config playwright.config.js",
     "APITests": "npx playwright test --grep @API",
-    "SafarNewConfig": "npx playwright test --config playwright.config1.js --project=safari"
+    "SafarNewConfig": "npx playwright test --config playwright.config1.js --project=safari",
+    "testsTS": "npx playwright test --config playwright.config.ts --grep @TS"
   },
   "keywords": [],
   "author": "",

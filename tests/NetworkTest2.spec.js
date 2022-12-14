@@ -1,5 +1,5 @@
 const {test, expect, request} = require('@playwright/test');
-const {APIUtils} = require('./utils/APIUtils').default;
+const {APIUtils} = require('../utils/APIUtils').default;
 
 // TESTCASE: Verify order created is showing in history page
 // Precondition - login, create order via API-
