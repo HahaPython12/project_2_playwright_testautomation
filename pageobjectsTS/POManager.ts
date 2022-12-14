@@ -30,6 +30,7 @@ export default class POManager{
         this.loginPage = new LoginPage(this.page);
         this.dashboardPage = new DashboardPage(this.page);
         this.cardPage = new CartPage(this.page, desiredProductName);
+        this.checkoutPage = new CheckoutPage(this.page);
         this.orderReview = new OrderReview(this.page);
         this.orderHistory = new OrderHistory(this.page);
     }
