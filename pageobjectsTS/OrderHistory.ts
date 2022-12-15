@@ -2,8 +2,8 @@ import { expect } from "@playwright/test";
 
 export default class OrderHistory{
     page: any;
-    orderBtn: any;
-    orderTableRows: any;
+    private orderBtn: any;
+    private orderTableRows: any;
 
     constructor(page: any){
         this.page = page;

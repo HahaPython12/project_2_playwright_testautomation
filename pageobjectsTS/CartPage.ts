@@ -2,9 +2,9 @@ const {expect} = require('@playwright/test');
 
 export default class CartPage{
     page: any;
-    cardProdcut: any;
-    desiredProductName: any;
-    checkoutBtn: any;
+    private cardProdcut: any;
+    private desiredProductName: any;
+    private checkoutBtn: any;
 
     constructor(page: any, desiredProductName: string){
         this.page = page;
@@ -17,7 +17,7 @@ export default class CartPage{
     async isCardProductVisible(){
         await this.cardProdcut.waitFor();
         const cartProductVisible = await this.desiredProductName.isVisible();
-        expect(cartProductVisible).toBeTruthy();
+        expect(cartProductVisible).toBeTruthy()  ;
     }
 
     async navigateToCheckout(){

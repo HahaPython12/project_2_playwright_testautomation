@@ -1,8 +1,8 @@
 export default class LoginPage {
     page: any; // alternativly only as "private page: any" as arg. of constructor
-    signInBtn: any;
-    userEmail: any;
-    password: string[]; // method .fill() takes a string[]
+    private signInBtn: any;
+    private userEmail: any;
+    private password: string[]; // method .fill() takes a string[]
 
     // put all the locator in the constructor
     constructor(page: any){

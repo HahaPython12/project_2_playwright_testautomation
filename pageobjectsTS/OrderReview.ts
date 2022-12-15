@@ -2,8 +2,8 @@ import { expect } from "@playwright/test";
 
 export default class OrderReview{
     page: any;
-    valideOrderText: any;
-    orderNumber: any;
+    private valideOrderText: any;
+    private orderNumber: any;
 
     constructor(page: any){
         this.page = page;

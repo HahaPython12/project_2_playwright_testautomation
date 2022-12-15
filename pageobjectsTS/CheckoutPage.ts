@@ -2,16 +2,16 @@ import { expect } from '@playwright/test';
 
 export default class CheckoutPage{
     page: any;
-    userNameCheckout: any;
-    userAddress: any;
-    addressOptionsDropdown: any;
-    creditCardNumber: any;
-    expireDateMonth: any;
-    expireDateDay: any;
-    applyCoupon: any;
-    cvvCode: any;
-    nameOnCard: any;
-    placeOrderBtn: any;
+    private userNameCheckout: any;
+    private userAddress: any;
+    private addressOptionsDropdown: any;
+    private creditCardNumber: any;
+    private expireDateMonth: any;
+    private expireDateDay: any;
+    private applyCoupon: any;
+    private cvvCode: any;
+    private nameOnCard: any;
+    private placeOrderBtn: any;
 
     constructor(page: any){
         this.page = page;

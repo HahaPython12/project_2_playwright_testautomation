@@ -1,8 +1,8 @@
 export default class DashboardPage{
     page: any;
-    cardProducts: any;
-    productsText: any;
-    cartBtn: any;
+    private cardProducts: any;
+    private productsText: any;
+    private cartBtn: any;
     
     constructor(page: any){
         this.page = page;
