@@ -11,11 +11,12 @@ import CheckoutPage from './CheckoutPage';
 import OrderReview from './OrderReview';
 import OrderHistory from './OrderHistory';
 
+ //import {Locator, Page} from "@playwright/test"
 
 export default class POManager{
     page: any;
     desiredProductName: any;
-    loginPage: LoginPage;
+    loginPage: any;
     dashboardPage: any;
     cardPage: any;
     checkoutPage: any;

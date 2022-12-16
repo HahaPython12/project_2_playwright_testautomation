@@ -1,17 +1,17 @@
-import { expect } from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 
 export default class CheckoutPage{
     page: any;
-    private userNameCheckout: any;
-    private userAddress: any;
-    private addressOptionsDropdown: any;
-    private creditCardNumber: any;
-    private expireDateMonth: any;
-    private expireDateDay: any;
-    private applyCoupon: any;
-    private cvvCode: any;
-    private nameOnCard: any;
-    private placeOrderBtn: any;
+    private userNameCheckout: Locator;
+    private userAddress: Locator;
+    private addressOptionsDropdown: Locator;
+    private creditCardNumber: Locator;
+    private expireDateMonth: Locator;
+    private expireDateDay: Locator;
+    private applyCoupon: Locator;
+    private cvvCode: Locator;
+    private nameOnCard: Locator;
+    private placeOrderBtn: Locator;
 
     constructor(page: any){
         this.page = page;
@@ -48,7 +48,7 @@ export default class CheckoutPage{
         await expect(this.userNameCheckout).toContainText(username);
     }
     
-    async chooseAddress(address){
+    async chooseAddress(address: string){
 
         await this.userAddress.type('Ger', {delay: 100});
         

@@ -1,10 +1,10 @@
-const {expect} = require('@playwright/test');
+import { expect, Locator } from '@playwright/test';
 
 export default class CartPage{
     page: any;
-    private cardProdcut: any;
-    private desiredProductName: any;
-    private checkoutBtn: any;
+    private cardProdcut: Locator;
+    private desiredProductName: Locator;
+    private checkoutBtn: Locator;
 
     constructor(page: any, desiredProductName: string){
         this.page = page;

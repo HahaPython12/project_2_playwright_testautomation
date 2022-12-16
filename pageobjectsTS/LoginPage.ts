@@ -1,11 +1,12 @@
+import { Locator } from "@playwright/test";
 export default class LoginPage {
     page: any; // alternativly only as "private page: any" as arg. of constructor
-    private signInBtn: any;
-    private userEmail: any;
+    private signInBtn: Locator;
+    private userEmail: Locator;
     private password: string[]; // method .fill() takes a string[]
 
     // put all the locator in the constructor
-    constructor(page: any){
+    constructor(page: any) {
         this.page = page;
         // locators
         this.signInBtn = page.locator("[name='login']");
@@ -14,11 +15,11 @@ export default class LoginPage {
     }
 
     // write reusable utilities / methods
-    async goTo(url: string){
+    async goTo(url: string) {
         await this.page.goto(url);
     }
 
-    async validLogin(username: string, password: string){
+    async validLogin(username: string, password: string) {
         // Login //
         //--- E.g. ---//
         // Email: hallodu@gmail.com
@@ -31,5 +32,5 @@ export default class LoginPage {
     }
 
 }
-// to make it visible 
+// to make it visible
 // module.exports = {LoginPage};

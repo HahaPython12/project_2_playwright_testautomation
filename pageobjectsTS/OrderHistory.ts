@@ -1,9 +1,9 @@
-import { expect } from "@playwright/test";
+import { expect, Locator } from "@playwright/test";
 
 export default class OrderHistory{
     page: any;
-    private orderBtn: any;
-    private orderTableRows: any;
+    private orderBtn: Locator;
+    private orderTableRows: Locator;
 
     constructor(page: any){
         this.page = page;

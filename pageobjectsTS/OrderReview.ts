@@ -1,9 +1,9 @@
-import { expect } from "@playwright/test";
+import { expect, Locator } from "@playwright/test";
 
 export default class OrderReview{
     page: any;
-    private valideOrderText: any;
-    private orderNumber: any;
+    private valideOrderText: Locator;
+    private orderNumber: Locator;
 
     constructor(page: any){
         this.page = page;
