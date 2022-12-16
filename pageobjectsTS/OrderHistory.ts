@@ -39,9 +39,11 @@ export default class OrderHistory{
         await this.orderBtn.click();
     }
 
-    getCutOrderID(orderNumberValue: string){
+    getCutOrderID(orderNumberValue: string | null){
         // cut out the order-ID: orderNumberValueCut
-        return orderNumberValue.split(' ')[2].split(' ')[0];
+        if (orderNumberValue){
+            return orderNumberValue.split(' ')[2].split(' ')[0];
+        }
     }
 }
 // module.exports = {OrderHistory}

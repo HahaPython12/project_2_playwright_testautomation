@@ -17,7 +17,7 @@ export default class OrderReview{
         await expect(this.valideOrderText).toHaveText(expectedValideOrderText);
     }
 
-    async getOrderNumber(){
+    async getOrderNumber(): Promise<string | null>{
         return await this.orderNumber.textContent();
     }
 }

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 import POManager from '../pageobjectsTS/POManager';
 const dataSet = JSON.parse(JSON.stringify(require('../utils/ClientAppPOTestData.json')));
 
@@ -11,7 +11,7 @@ test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, asyn
     const url : string = "https://rahulshettyacademy.com/client";
     // chrome - plugin / cookies
     const context = await browser.newContext();
-    const page = await context.newPage();
+    const page: Page = await context.newPage();
         
     // Objects //
     const poManager = new POManager(page, dataSet[0].desiredProductName);
@@ -60,7 +60,7 @@ test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, asyn
     // Order-Review//
     //--- Arrange ---//
     const expectedValideOrderText: string = " Thankyou for the order. ";
-    const orderNumberValue: string = await orderReview.getOrderNumber();
+    const orderNumberValue: string | null = await orderReview.getOrderNumber();
     console.log(orderNumberValue);
 
     //--- Assert ---//
@@ -74,7 +74,7 @@ test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, asyn
     const orderNumberValueCut = orderHistory.getCutOrderID(orderNumberValue);
 
     //--- Act ---//
-    await orderHistory.searchForOrderIDAndSelectView(orderNumberValue);
+    await orderHistory.searchForOrderIDAndSelectView(orderNumberValue as string);
     const orderNumberInsideView = await orderHistory.getOrderIdFromView();
 
     //--- Assert ---//

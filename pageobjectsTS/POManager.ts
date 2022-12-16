@@ -11,17 +11,17 @@ import CheckoutPage from './CheckoutPage';
 import OrderReview from './OrderReview';
 import OrderHistory from './OrderHistory';
 
- import {Locator, Page} from "@playwright/test";
+import {Page} from "@playwright/test";
 
 export default class POManager{
     page: Page;
-    desiredProductName: any;
-    loginPage: any;
-    dashboardPage: any;
-    cardPage: any;
-    checkoutPage: any;
-    orderReview: any;
-    orderHistory: any;
+    desiredProductName: string;
+    loginPage: LoginPage;
+    dashboardPage: DashboardPage;
+    cardPage: CartPage;
+    checkoutPage: CheckoutPage;
+    orderReview: OrderReview;
+    orderHistory: OrderHistory;
 
     constructor(page : Page, desiredProductName: string){
         this.page = page;
