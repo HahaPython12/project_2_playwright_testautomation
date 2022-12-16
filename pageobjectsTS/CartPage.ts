@@ -1,12 +1,12 @@
-import { expect, Locator } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 
 export default class CartPage{
-    page: any;
+    page: Page;
     private cardProdcut: Locator;
     private desiredProductName: Locator;
     private checkoutBtn: Locator;
 
-    constructor(page: any, desiredProductName: string){
+    constructor(page: Page, desiredProductName: string){
         this.page = page;
         // locators
         this.cardProdcut = page.locator("div li").first();

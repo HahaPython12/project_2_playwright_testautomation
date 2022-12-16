@@ -1,11 +1,11 @@
-import { expect, Locator } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export default class OrderReview{
-    page: any;
+    page: Page;
     private valideOrderText: Locator;
     private orderNumber: Locator;
 
-    constructor(page: any){
+    constructor(page: Page){
         this.page = page;
         // locators
         this.valideOrderText = page.locator('.hero-primary');

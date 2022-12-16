@@ -1,7 +1,7 @@
-import { expect, Locator } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 
 export default class CheckoutPage{
-    page: any;
+    page: Page;
     private userNameCheckout: Locator;
     private userAddress: Locator;
     private addressOptionsDropdown: Locator;
@@ -13,7 +13,7 @@ export default class CheckoutPage{
     private nameOnCard: Locator;
     private placeOrderBtn: Locator;
 
-    constructor(page: any){
+    constructor(page: Page){
         this.page = page;
         // locators
         this.userNameCheckout = page.locator('.user__name');

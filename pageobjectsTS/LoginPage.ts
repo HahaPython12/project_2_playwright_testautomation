@@ -1,12 +1,12 @@
-import { Locator } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 export default class LoginPage {
-    page: any; // alternativly only as "private page: any" as arg. of constructor
+    page: Page; // alternativly only as "private page: any" as arg. of constructor
     private signInBtn: Locator;
     private userEmail: Locator;
-    private password: string[]; // method .fill() takes a string[]
+    private password: Locator; 
 
     // put all the locator in the constructor
-    constructor(page: any) {
+    constructor(page: Page) {
         this.page = page;
         // locators
         this.signInBtn = page.locator("[name='login']");

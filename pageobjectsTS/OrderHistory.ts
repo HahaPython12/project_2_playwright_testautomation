@@ -1,11 +1,11 @@
-import { expect, Locator } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export default class OrderHistory{
-    page: any;
+    page: Page;
     private orderBtn: Locator;
     private orderTableRows: Locator;
 
-    constructor(page: any){
+    constructor(page: Page){
         this.page = page;
         // locators
         this.orderBtn = page.locator('.fa-handshake-o');

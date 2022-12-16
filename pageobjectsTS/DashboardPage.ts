@@ -1,12 +1,12 @@
-import { Locator } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 
 export default class DashboardPage{
-    page: any;
+    page: Page;
     private cardProducts: Locator;
     private productsText: Locator;
     private cartBtn: Locator;
     
-    constructor(page: any){
+    constructor(page: Page){
         this.page = page;
         // locators
         this.cardProducts = page.locator('.card-body');

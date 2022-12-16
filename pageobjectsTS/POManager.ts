@@ -11,10 +11,10 @@ import CheckoutPage from './CheckoutPage';
 import OrderReview from './OrderReview';
 import OrderHistory from './OrderHistory';
 
- //import {Locator, Page} from "@playwright/test"
+ import {Locator, Page} from "@playwright/test";
 
 export default class POManager{
-    page: any;
+    page: Page;
     desiredProductName: any;
     loginPage: any;
     dashboardPage: any;
@@ -23,7 +23,7 @@ export default class POManager{
     orderReview: any;
     orderHistory: any;
 
-    constructor(page : any, desiredProductName: string){
+    constructor(page : Page, desiredProductName: string){
         this.page = page;
         this.desiredProductName = desiredProductName;
         // Objects //
