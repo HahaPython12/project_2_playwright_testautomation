@@ -62,7 +62,7 @@ for(const data of dataSet){
     // Order-Review//
     //--- Arrange ---//
     const expectedValideOrderText: string = " Thankyou for the order. ";
-    const orderNumberValue: string = await orderReview.getOrderNumber();
+    const orderNumberValue: string | null = await orderReview.getOrderNumber();
     console.log(orderNumberValue);
 
     //--- Assert ---//
@@ -76,7 +76,7 @@ for(const data of dataSet){
     const orderNumberValueCut = orderHistory.getCutOrderID(orderNumberValue);
 
     //--- Act ---//
-    await orderHistory.searchForOrderIDAndSelectView(orderNumberValue);
+    await orderHistory.searchForOrderIDAndSelectView(orderNumberValue as string);
     const orderNumberInsideView = await orderHistory.getOrderIdFromView();
 
     //--- Assert ---//

@@ -18,6 +18,12 @@ export default class OrderReview{
     }
 
     async getOrderNumber(): Promise<string | null>{
+        // change to:
+        // const a = await this.orderNumber.textContent();
+        // if(a){
+        //     return a;
+        // }
+        // return "Hallo"; ot throw ERROR "can't find string"
         return await this.orderNumber.textContent();
     }
 }
