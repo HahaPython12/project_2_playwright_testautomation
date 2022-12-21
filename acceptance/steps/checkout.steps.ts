@@ -1,0 +1,42 @@
+import { Given, When, Then } from "@cucumber/cucumber";
+import { page } from './world';
+import { expect, Locator } from '@playwright/test';
+import { POManager } from '../../pageobjectsTS/POManager';
+
+Given('I am already logged in to {string} with {string}, {string} and a {string} inside the cart.', async (expectedText, givenEmail, password, product) => {
+    const actualText = await page.locator(`.title em`).textContent();
+    console.log(actualText);
+    expect(expectedText).toEqual(actualText!.trim());
+
+    // Login //
+    const poManager = new POManager(page, product);
+    const loginPage = poManager.getLoginPage();
+    await loginPage.validLogin(givenEmail, password);
+
+    // Dashboard //
+    const dashboardPage = poManager.getDashboardPage();
+    await dashboardPage.searchForProductAddToCart(product);
+    await dashboardPage.navigateToCart();
+
+    // CartPage //
+    const cardPage = poManager.getCartPage();
+    await cardPage.isCardProductVisible();
+    await cardPage.navigateToCheckout();
+});
+
+
+When('I fill out {string}, {string}, {string}, {string} and the {string}', async (creditCardNumber, cvvCode, nameOnCard, applyCoupon, address) => {
+    // CheckoutPage //
+    const poManager = new POManager(page, 'productname');
+    const checkoutPage = poManager.getCheckoutPage();
+    await checkoutPage.fillOutFields(creditCardNumber, cvvCode, nameOnCard, applyCoupon);
+    await checkoutPage.chooseAddress(' ' + address);
+});
+
+
+Then('I see the {string} is already filled and I can place the order', async (givenEmail) => {
+    // CheckoutPage //
+    const poManager = new POManager(page, 'productname');
+    const checkoutPage = poManager.getCheckoutPage();
+    await checkoutPage.checkFilledUsername(givenEmail);
+});
