@@ -6,6 +6,7 @@ Feature: User login
     I want to do login to the page
     So I can buy some items
 
+    @EndtoEnd
     Scenario: Login to Rahul Shetty Academy
         Given a user has navigated to 'Rahul Shetty Academy'
         When user type valid '<username>', '<password>' and click login

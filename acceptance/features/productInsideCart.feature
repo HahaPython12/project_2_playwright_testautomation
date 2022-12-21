@@ -6,6 +6,7 @@ Feature: Choose a product and add to cart
     I want to choose a product
     So I can add it to my cart
 
+    @EndtoEnd
     Scenario: Choose a Product from the Dashboard, add it to the cart
         Given a user is already logged in to 'Rahul Shetty Academy' with '<username>' and '<password>'
         When choose a product '<product>' and add to cart

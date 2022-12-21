@@ -6,6 +6,7 @@ Feature: Checkout
     I want to checkout
     So I can pay the products
 
+    @EndtoEnd
     Scenario: Choose a Product from the Dashboard, add to cart
         Given I am already logged in to 'Rahul Shetty Academy' with '<username>', '<password>' and a '<product>' inside the cart.
         When I fill out '<creditcardnumber>', '<cvvcode>', '<nameoncard>', '<applycoupon>' and the '<address>'

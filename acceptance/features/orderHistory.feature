@@ -6,6 +6,7 @@ Feature: Ordernumber is displayed in order history
     I want to check my order history
     So I can verify that my order is right
 
+    @EndtoEnd
     Scenario: Reviewing the order history
         Given I am already logged in to 'Rahul Shetty Academy' with '<username>', '<password>', a '<product>' inside the cart and I filled out '<creditcardnumber>', '<cvvcode>', '<nameoncard>', '<applycoupon>', '<address>' at the checkout page and i see the '<expectedText>' text.
         When I click on order history 
