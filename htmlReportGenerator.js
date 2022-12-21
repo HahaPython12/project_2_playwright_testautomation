@@ -16,7 +16,7 @@ var options = {
     metadata: {
         "App Version": "1.1.1",
         "Test Enviroment": "QA",
-        "Platform": "Web/Angular",
+        "Platform": "Web/Chrome -'Angular'",
         "Sprint": "001"
     }
 };
