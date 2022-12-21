@@ -8,13 +8,18 @@
     "webTests": "npx playwright test --grep @Web --config playwright.config.js",
     "APITests": "npx playwright test --grep @API",
     "SafarNewConfig": "npx playwright test --config playwright.config1.js --project=safari",
-    "testsTS": "npx playwright test --config playwright.config.ts --grep @TS"
+    "testsTS": "npx playwright test --config playwright.config.ts --grep @TS",
+    "testCucumber": "npx cucumber-js -p test_runner --config cucumber.config.js --tags @EndtoEnd"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "@cucumber/cucumber": "^8.9.1",
     "@playwright/test": "^1.28.1",
-    "allure-playwright": "^2.0.0-beta.20"
+    "allure-playwright": "^2.0.0-beta.20",
+    "playwright": "^1.29.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
   }
 }

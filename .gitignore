@@ -10,3 +10,4 @@ node_modules/
 /playwright.config1.js
 /allure-results
 /README.md
+/acceptance
