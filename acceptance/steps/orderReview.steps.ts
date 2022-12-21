@@ -5,7 +5,7 @@ import { POManager } from '../../pageobjectsTS/POManager';
 
 
 Given('I am already logged in to {string} with {string}, {string}, a {string} inside the cart and I filled out {string}, {string}, {string}, {string} and the {string} at the checkout page.', 
-async (expectedText, givenEmail, password, product, creditCardNumber, cvvCode, nameOnCard, applyCoupon, address) => {
+async (expectedText: string, givenEmail: string, password: string, product: string, creditCardNumber: string, cvvCode: string, nameOnCard: string, applyCoupon: string, address: string) => {
     const actualText = await page.locator(`.title em`).textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
@@ -40,7 +40,7 @@ When('I place the order', async () => {
 });
 
 
-Then('I check if the expected text {string} is displayed', async (expectedValideOrderText) => {
+Then('I check if the expected text {string} is displayed', async (expectedValideOrderText: string) => {
     // Order-Review //
     const poManager = new POManager(page, 'productname');
     const orderReview = poManager.getOrderReview();

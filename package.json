@@ -9,7 +9,7 @@
     "APITests": "npx playwright test --grep @API",
     "SafarNewConfig": "npx playwright test --config playwright.config1.js --project=safari",
     "testsTS": "npx playwright test --config playwright.config.ts --grep @TS",
-    "testCucumber": "npx cucumber-js -p test_runner --config cucumber.config.js --tags @EndtoEnd& node ./htmlReportGenerator.js"
+    "testCucumber": "npx cucumber-js -p test_runner --config cucumber.config.js --tags @EndtoEnd & node ./htmlReportGenerator.js"
   },
   "keywords": [],
   "author": "",

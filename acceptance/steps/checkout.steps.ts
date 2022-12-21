@@ -3,7 +3,7 @@ import { page } from './world';
 import { expect, Locator } from '@playwright/test';
 import { POManager } from '../../pageobjectsTS/POManager';
 
-Given('I am already logged in to {string} with {string}, {string} and a {string} inside the cart.', async (expectedText, givenEmail, password, product) => {
+Given('I am already logged in to {string} with {string}, {string} and a {string} inside the cart.', async (expectedText: string, givenEmail: string, password: string, product: string) => {
     const actualText = await page.locator(`.title em`).textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
@@ -25,7 +25,7 @@ Given('I am already logged in to {string} with {string}, {string} and a {string}
 });
 
 
-When('I fill out {string}, {string}, {string}, {string} and the {string}', async (creditCardNumber, cvvCode, nameOnCard, applyCoupon, address) => {
+When('I fill out {string}, {string}, {string}, {string} and the {string}', async (creditCardNumber: string, cvvCode: string, nameOnCard: string, applyCoupon: string, address: string) => {
     // CheckoutPage //
     const poManager = new POManager(page, 'productname');
     const checkoutPage = poManager.getCheckoutPage();
@@ -34,7 +34,7 @@ When('I fill out {string}, {string}, {string}, {string} and the {string}', async
 });
 
 
-Then('I see the {string} is already filled and I can place the order', async (givenEmail) => {
+Then('I see the {string} is already filled and I can place the order', async (givenEmail: string) => {
     // CheckoutPage //
     const poManager = new POManager(page, 'productname');
     const checkoutPage = poManager.getCheckoutPage();

@@ -4,7 +4,8 @@ import { expect, Locator } from '@playwright/test';
 import { POManager } from '../../pageobjectsTS/POManager';
 
 
-Given('a user is already logged in to {string} with {string} and {string}', async (expectedText, givenEmail, password) => {
+Given('a user is already logged in to {string} with {string} and {string}', 
+async (expectedText: string, givenEmail: string, password: string) => {
     const actualText = await page.locator(`.title em`).textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
@@ -15,7 +16,7 @@ Given('a user is already logged in to {string} with {string} and {string}', asyn
     await loginPage.validLogin(givenEmail, password);
 });
 
-When('choose a product {string} and add to cart', async (product) => {
+When('choose a product {string} and add to cart', async (product: string) => {
     const poManager = new POManager(page, product);
     const dashboardPage = poManager.getDashboardPage();
     await dashboardPage.searchForProductAddToCart(product);
@@ -23,7 +24,7 @@ When('choose a product {string} and add to cart', async (product) => {
 });
 
 
-Then('I see the product {string} inside the cart', async (product) => {
+Then('I see the product {string} inside the cart', async (product: string) => {
     const poManager = new POManager(page, product);
     const cardPage = poManager.getCartPage();
     await cardPage.isCardProductVisible();

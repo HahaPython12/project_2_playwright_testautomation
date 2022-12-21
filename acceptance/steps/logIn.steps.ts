@@ -10,7 +10,7 @@ import { POManager } from '../../pageobjectsTS/POManager';
 // const givenEmail: string = 'hallodu@gmail.com';
 // const password: string = 'Aa12345!';
 
-Given('a user has navigated to {string}', async (expectedText) => {
+Given('a user has navigated to {string}', async (expectedText: string) => {
     const actualText = await page.locator(`.title em`).textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
@@ -18,7 +18,7 @@ Given('a user has navigated to {string}', async (expectedText) => {
 });
 
 
-When('user type valid {string}, {string} and click login', async (givenEmail, password) => {
+When('user type valid {string}, {string} and click login', async (givenEmail: string, password: string) => {
     //--- Act ---//
     // Login //
     // Objects //
@@ -28,7 +28,7 @@ When('user type valid {string}, {string} and click login', async (givenEmail, pa
 });
 
 
-Then('he should enter his account-page {string}', async (expectedPageTitle) => {
+Then('he should enter his account-page {string}', async (expectedPageTitle: string) => {
     const subTitle: Locator = page.locator('.left');
     const textOfSubTitle = await subTitle.textContent();
     console.log(textOfSubTitle);

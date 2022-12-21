@@ -7,7 +7,7 @@ let orderNumberValue: string | null;
 let orderNumberValueCut: string;
 
 Given('I am already logged in to {string} with {string}, {string}, a {string} inside the cart and I filled out {string}, {string}, {string}, {string}, {string} at the checkout page and i see the {string} text.',
- async (expectedText, givenEmail, password, product, creditCardNumber, cvvCode, nameOnCard, applyCoupon, address, expectedValideOrderText) => {
+ async (expectedText: string, givenEmail: string, password: string, product: string, creditCardNumber: string, cvvCode: string, nameOnCard: string, applyCoupon: string, address: string, expectedValideOrderText: string) => {
     const actualText = await page.locator(`.title em`).textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
