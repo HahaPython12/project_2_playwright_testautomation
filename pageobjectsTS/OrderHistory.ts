@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 
-export default class OrderHistory{
+export class OrderHistory{
     page: Page;
     private orderBtn: Locator;
     private orderTableRows: Locator;

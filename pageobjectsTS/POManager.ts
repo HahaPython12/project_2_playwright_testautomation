@@ -4,16 +4,16 @@ So the each object dosn't need to be imported and instantiated in the test-file.
 Just ask the POManager for an object and store it into a variable.
 */
 
-import LoginPage from '../pageobjectsTS/LoginPage';
-import DashboardPage from '../pageobjectsTS//DashboardPage';
-import CartPage from '../pageobjectsTS/CartPage';
-import CheckoutPage from './CheckoutPage';
-import OrderReview from './OrderReview';
-import OrderHistory from './OrderHistory';
+import { LoginPage } from '../pageobjectsTS/LoginPage';
+import { DashboardPage } from '../pageobjectsTS//DashboardPage';
+import { CartPage } from '../pageobjectsTS/CartPage';
+import { CheckoutPage } from './CheckoutPage';
+import { OrderReview } from './OrderReview';
+import { OrderHistory } from './OrderHistory';
 
-import {Page} from "@playwright/test";
+import { Page } from "@playwright/test";
 
-export default class POManager{
+export class POManager {
     page: Page;
     desiredProductName: string;
     loginPage: LoginPage;
@@ -23,7 +23,7 @@ export default class POManager{
     orderReview: OrderReview;
     orderHistory: OrderHistory;
 
-    constructor(page : Page, desiredProductName: string){
+    constructor(page: Page, desiredProductName: string) {
         this.page = page;
         this.desiredProductName = desiredProductName;
         // Objects //
@@ -36,27 +36,27 @@ export default class POManager{
         this.orderHistory = new OrderHistory(this.page);
     }
 
-    getLoginPage(){
+    getLoginPage() {
         return this.loginPage;
     }
 
-    getDashboardPage(){
+    getDashboardPage() {
         return this.dashboardPage;
     }
-    
-    getCartPage(){
+
+    getCartPage() {
         return this.cardPage;
     }
-    
-    getCheckoutPage(){
+
+    getCheckoutPage() {
         return this.checkoutPage;
     }
-    
-    getOrderReview(){
+
+    getOrderReview() {
         return this.orderReview;
     }
-    
-    getOrderHistory(){
+
+    getOrderHistory() {
         return this.orderHistory;
     }
 }

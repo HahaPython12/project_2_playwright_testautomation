@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-export default class CartPage{
+export class CartPage{
     page: Page;
     private cardProdcut: Locator;
     private desiredProductName: Locator;

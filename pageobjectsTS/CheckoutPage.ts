@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-export default class CheckoutPage{
+export class CheckoutPage{
     page: Page;
     private userNameCheckout: Locator;
     private userAddress: Locator;

@@ -1,18 +1,17 @@
 import { test, expect, Page } from '@playwright/test';
-import POManager from '../pageobjectsTS/POManager';
+import { POManager } from '../pageobjectsTS/POManager';
 const dataSet = JSON.parse(JSON.stringify(require('../utils/ClientAppPOTestData.json')));
 
 // test(Testname, Testfunktion)
-test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, async ({browser})=>
-{
+test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, async ({ browser }) => {
 
     //--- Arrange ---//
     // Variables //
-    const url : string = "https://rahulshettyacademy.com/client";
+    const url: string = "https://rahulshettyacademy.com/client";
     // chrome - plugin / cookies
     const context = await browser.newContext();
     const page: Page = await context.newPage();
-        
+
     // Objects //
     const poManager = new POManager(page, dataSet[0].desiredProductName);
 
@@ -56,7 +55,7 @@ test(`@TS Playwright End-to-End Test for ${dataSet[0].desiredProductName}`, asyn
     // await page.pause();
     await checkoutPage.navigateToPlaceOrder();
 
-    
+
     // Order-Review//
     //--- Arrange ---//
     const expectedValideOrderText: string = " Thankyou for the order. ";

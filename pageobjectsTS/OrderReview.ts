@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 
-export default class OrderReview{
+export class OrderReview{
     page: Page;
     private valideOrderText: Locator;
     private orderNumber: Locator;

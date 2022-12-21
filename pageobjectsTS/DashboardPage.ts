@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export default class DashboardPage{
+export class DashboardPage{
     page: Page;
     private cardProducts: Locator;
     private productsText: Locator;

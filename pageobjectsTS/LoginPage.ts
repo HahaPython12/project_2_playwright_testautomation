@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-export default class LoginPage {
+export class LoginPage {
     page: Page; // alternativly only as "private page: any" as arg. of constructor
     private signInBtn: Locator;
     private userEmail: Locator;
