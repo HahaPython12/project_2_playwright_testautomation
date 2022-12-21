@@ -5,7 +5,7 @@ var currentDate = date.getDate() + '_' + (date.getMonth()+1) + '_'
                 + date.getMinutes() + '_' + date.getSeconds();
 
 var options = {
-    brandTitle: "demo test scenarios",
+    brandTitle: "Features for End to End Test",
     theme: 'bootstrap',
     jsonFile: 'Reports/cucumber_report.json',
     output: 'Reports/cucumber_report_' + currentDate + '.html',
