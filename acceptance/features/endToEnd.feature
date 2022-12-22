@@ -8,9 +8,9 @@ Feature: End-To-End Test
 
     @EndtoEnd
     Scenario: Login to Rahul Shetty Academy
-        Given a user has navigated to 'Rahul Shetty Academy'
-        When user type valid '<username>', '<password>' and click login
-        Then he should enter his account-page 'AutomationAutomation Practice'
+        Given I navigate to 'Rahul Shetty Academy'
+        When I type valid '<username>', '<password>' and click login
+        Then I should enter his account-page 'AutomationAutomation Practice'
 
     Examples:
         | username          | password | 
@@ -18,8 +18,8 @@ Feature: End-To-End Test
 
     @EndtoEnd
     Scenario: Choose a Product from the Dashboard, add it to the cart
-        Given a user is already logged in to 'Rahul Shetty Academy' with '<username>' and '<password>'
-        When choose a product '<product>' and add to cart
+        Given I am already logged in to 'Rahul Shetty Academy' with '<username>' and '<password>'
+        When I choose a product '<product>' and add to cart
         Then I see the product '<product>' inside the cart
 
     Examples:
