@@ -4,13 +4,14 @@ import { expect, Locator } from '@playwright/test';
 import { POManager } from '../../pageobjectsTS/POManager';
 
 Given('I am already logged in to {string} with {string}, {string} and a {string} inside the cart.', async (expectedText: string, givenEmail: string, password: string, product: string) => {
-    const actualText = await page.locator(`.title em`).textContent();
+    const poManager = new POManager(page, product);
+    const loginPage = poManager.getLoginPage();
+    const actualText = await loginPage.actualTextOnLoginPage.textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
 
     // Login //
-    const poManager = new POManager(page, product);
-    const loginPage = poManager.getLoginPage();
+    // const poManager = new POManager(page, product);
     await loginPage.validLogin(givenEmail, password);
 
     // Dashboard //

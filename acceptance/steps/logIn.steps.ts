@@ -10,25 +10,27 @@ import { POManager } from '../../pageobjectsTS/POManager';
 // const givenEmail: string = 'hallodu@gmail.com';
 // const password: string = 'Aa12345!';
 
-Given('a user has navigated to {string}', async (expectedText: string) => {
-    const actualText = await page.locator(`.title em`).textContent();
+Given('I navigate to {string}', async (expectedText: string) => {
+    const poManager = new POManager(page, 'abc');
+    const loginPage = poManager.getLoginPage();
+    const actualText = await loginPage.actualTextOnLoginPage.textContent();
     console.log(actualText);
     expect(expectedText).toEqual(actualText!.trim());
     console.log("Hallo_login")
 });
 
 
-When('user type valid {string}, {string} and click login', async (givenEmail: string, password: string) => {
+When('I type valid {string}, {string} and click login', async (givenEmail: string, password: string) => {
     //--- Act ---//
     // Login //
-    // Objects //
     const poManager = new POManager(page, 'abc');
     const loginPage = poManager.getLoginPage();
     await loginPage.validLogin(givenEmail, password);
 });
 
 
-Then('he should enter his account-page {string}', async (expectedPageTitle: string) => {
+Then('I should enter his account-page {string}', async (expectedPageTitle: string) => {
+    // text from logo
     const subTitle: Locator = page.locator('.left');
     const textOfSubTitle = await subTitle.textContent();
     console.log(textOfSubTitle);

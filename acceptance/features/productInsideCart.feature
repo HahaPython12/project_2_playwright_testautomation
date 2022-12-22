@@ -8,8 +8,8 @@ Feature: Choose a product and add to cart
 
     @EndtoEnd
     Scenario: Choose a Product from the Dashboard, add it to the cart
-        Given a user is already logged in to 'Rahul Shetty Academy' with '<username>' and '<password>'
-        When choose a product '<product>' and add to cart
+        Given I am already logged in to 'Rahul Shetty Academy' with '<username>' and '<password>'
+        When I choose a product '<product>' and add to cart
         Then I see the product '<product>' inside the cart
 
     Examples:

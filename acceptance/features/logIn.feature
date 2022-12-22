@@ -8,9 +8,9 @@ Feature: User login
 
     @EndtoEnd
     Scenario: Login to Rahul Shetty Academy
-        Given a user has navigated to 'Rahul Shetty Academy'
-        When user type valid '<username>', '<password>' and click login
-        Then he should enter his account-page 'AutomationAutomation Practice'
+        Given I navigate to 'Rahul Shetty Academy'
+        When I type valid '<username>', '<password>' and click login
+        Then I should enter his account-page 'AutomationAutomation Practice'
 
     Examples:
         | username          | password | 

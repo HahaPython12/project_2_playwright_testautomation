@@ -4,6 +4,7 @@ export class LoginPage {
     private signInBtn: Locator;
     private userEmail: Locator;
     private password: Locator; 
+    actualTextOnLoginPage: Locator;
 
     // put all the locator in the constructor
     constructor(page: Page) {
@@ -12,6 +13,7 @@ export class LoginPage {
         this.signInBtn = page.locator("[name='login']");
         this.userEmail = page.locator('#userEmail');
         this.password = page.locator('#userPassword');
+        this.actualTextOnLoginPage =  page.locator(`.title em`);        // Rahul Shetty Academy
     }
 
     // write reusable utilities / methods
