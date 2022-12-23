@@ -5,7 +5,7 @@ const dataSet = JSON.parse(JSON.stringify(require('../utils/ClientAppPOTestData.
 // for loop for parametrized testing
 for (const data of dataSet) {
     // test(Testname, Testfunktion)
-    test(`@TS Page Context Playwright End-to-End Test for ${data.desiredProductName}`, async ({ browser }) => {
+    test(`Page Context Playwright End-to-End Test for ${data.desiredProductName}`, async ({ browser }) => { //@TS 
 
         //--- Arrange ---//
         // Variables //

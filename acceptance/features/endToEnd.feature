@@ -10,7 +10,7 @@ Feature: End-To-End Test
     Scenario: Login to Rahul Shetty Academy
         Given I navigate to 'Rahul Shetty Academy'
         When I type valid '<username>', '<password>' and click login
-        Then I should enter his account-page 'AutomationAutomation Practice'
+        Then I should enter my account-page 'AutomationAutomation Practice'
 
     Examples:
         | username          | password | 

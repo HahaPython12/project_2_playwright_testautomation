@@ -29,7 +29,7 @@ When('I type valid {string}, {string} and click login', async (givenEmail: strin
 });
 
 
-Then('I should enter his account-page {string}', async (expectedPageTitle: string) => {
+Then('I should enter my account-page {string}', async (expectedPageTitle: string) => {
     // text from logo
     const subTitle: Locator = page.locator('.left');
     const textOfSubTitle = await subTitle.textContent();
