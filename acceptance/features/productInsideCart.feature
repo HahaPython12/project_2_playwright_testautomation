@@ -1,6 +1,6 @@
 Feature: Choose a product and add to cart
 
-    Feature Description: Choose a product form the dashboard, add it to the cart and navigate to the cart.
+    Feature Description: Choose a product from the dashboard, add it to the cart and navigate to the cart.
 
     As a user
     I want to choose a product
