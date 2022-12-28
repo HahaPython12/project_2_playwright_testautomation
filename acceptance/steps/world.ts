@@ -1,4 +1,4 @@
-import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
+import { After, Before, setDefaultTimeout, Status } from "@cucumber/cucumber";
 import { Browser, chromium, Page, webkit } from "@playwright/test";
 // import { POManager } from "../../pageobjectsTS/POManager";
 
@@ -24,7 +24,11 @@ Before(async () => {
     return page;
 });
 
-After(async () => {
+After(async function(Scenario) {
+    // taking a screenshot, when fail
+    if(Scenario.result!.status === Status.FAILED){
+        await this.attach(await page.screenshot({path: `./Screenshots/${Scenario.pickle.name}.png`, fullPage: true}), "image/png");
+    }
     await browser.close();
 });
 
