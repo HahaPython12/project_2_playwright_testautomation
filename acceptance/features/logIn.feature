@@ -7,6 +7,7 @@ Feature: User login
     So I can buy some items
 
     @EndtoEnd
+    @VIP
     Scenario: Login to Rahul Shetty Academy
         Given I navigate to 'Rahul Shetty Academy'
         When I type valid '<username>', '<password>' and click login
